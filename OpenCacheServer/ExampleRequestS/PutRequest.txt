@@ -4,7 +4,6 @@ Method: PUT
 Headers:
     Content-Type: application/json
     AuthKey: rgZPfxpGZowOXsKO4MQ2zjsj9VnZ4JPTZWYvsRSnTkvQ5Mf6Ri
-    IndexKey: test
 Body: 
     {
 	    "IndexKey":"test"

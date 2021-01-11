@@ -81,8 +81,8 @@ namespace OpenCacheServer.Toolbox
                     string putdata = reader.ReadToEnd();
                     body.Close();
                     reader.Close();
-                    string indexKey = Request.Headers["IndexKey"];
-                    byte[] responseBytes = Encoding.UTF8.GetBytes(PutDb(indexKey,putdata).ToString());
+                    FilterModel fm = putdata.FromJson<FilterModel>();
+                    byte[] responseBytes = Encoding.UTF8.GetBytes(PutDb(fm.IndexKey, putdata).ToString());
                     Response.AddHeader("Content-Type","application/json ; charset=utf-8");
                     Response.OutputStream.Write(responseBytes, 0, responseBytes.Length);
                 }
